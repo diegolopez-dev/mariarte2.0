@@ -1,0 +1,20 @@
+{% extends "mariarteApp/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<section class="contact" id="registro">
+    <h2 class="registro-title">Registro</h2>
+    <div class="contact-container">
+        <div class="form">
+            <form id="form_registro" method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Registrate" id="submit-btn" class="submit-btn"/>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "mariarteApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="contact" id="contact">
+    <h2 class="contact-title title-tienda">Tienda</h2>
+    <div class="row" id="row-tienda">
+        {% for producto in productos %}
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="{{producto.imagen.url}}">
+                <div class="card-body">
+                    <h7>{{producto.nombre}}</h7>
+                    <p>{{producto.precio}} €</p>
+                    <button class="btn btn-sm nav-item" type="button">
+                        <a class="nav-link text-center" href="{% if request.user.is_authenticated %} {% url 'carro:agregar' producto.id %} {% else %} {% url 'TiendaCarro' %} {% endif %}">Agregar al carro</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

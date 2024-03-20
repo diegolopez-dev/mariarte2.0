@@ -1,0 +1,24 @@
+{% extends "mariarteApp/base.html" %}
+{% load static %}
+{% block content %}
+
+    {% for servicio in servicios %}
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ servicio.imagen.url }}" alt="">
+            <div class="intro-text left-0 text-center bg-faded p-3 rounded">
+              <h2 class="section-heading mb-1" >
+                <span id="title" class="section-heading-upper">{{ servicio.titulo }}</span>
+                <span id="subtitle" class="section-heading-lower">{{ servicio.contenido }}</span>
+              </h2>
+              <p class="mb-1">
+                  {{ servicio.descripcion }}
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+    {% endfor %}
+
+{% endblock %}

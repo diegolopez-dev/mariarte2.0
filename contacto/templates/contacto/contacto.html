@@ -1,0 +1,21 @@
+{% extends "mariarteApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="contact" id="contact">
+    <h2 class="contact-title">Contáctanos</h2>
+    <div class="contact-container">
+        <div class="form">
+        <form id="form" action="https://formspree.io/f/mrgnqkpo" method="POST">
+            {% csrf_token %}
+            {{ miFormulario }}
+            <input type="submit" value="Enviar" id="submit-btn" class="submit-btn"/>
+        </form>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'mariarteApp/vendor/bootstrap/js/app.js' %}"></script>
+
+{% endblock %}

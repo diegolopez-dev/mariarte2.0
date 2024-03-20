@@ -1,0 +1,24 @@
+{% extends "mariarteApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="contact" id="contact">
+    <h2 class="contact-title">Pedido</h2>
+    <div class="contact-container">
+        {% if request.user.is_authenticated %}
+            {% include "carro/widget.html" %}
+        {% else %}
+            <div class="form text-center">
+                <p class="mb-4">Debes <span>LOGEARTE</span> ó <span>REGISTRARTE</span> para poder realizar el pedido.</p>
+                <button class="btn btn-sm nav-item" type="button">
+                    <a class="nav-link text-center" href="{% url 'logear' %}">Login</a>
+                </button>
+                <button class="btn btn-sm nav-item" type="button">
+                    <a class="nav-link text-center" href="{% url 'Autenticacion' %}">Regí­strate</a>
+                </button>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}
