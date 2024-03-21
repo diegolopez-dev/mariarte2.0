@@ -1,5 +1,6 @@
 asgiref==3.7.2
 Brotli==1.1.0
+crispy-bootstrap4==2024.1
 crispy-bootstrap5==2024.2
 dj-database-url==2.1.0
 Django==5.0.3
