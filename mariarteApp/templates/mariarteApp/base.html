@@ -3,73 +3,74 @@
 
   <head>
 
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="MariArte vventa de botellas decoradas"/>
-    <meta name="keywords" content="MariArte, Botellas decoradas"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MariArte | Botellas decoradas</title>
-    {% load static %}
+
+    {% load  static %}
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'mariarteApp/img/icono.png' %}"/>
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'mariarteApp/img/icono.png' %}"/>
-    <link href="{% static 'mariarteApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'mariarteApp/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
     <link href="{% static 'mariarteApp/css/gestion.css' %}" rel="stylesheet">
-</head>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+
+  </head>
 
 <body>
- <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-2" id="mainNav">
-        <div class="container">
-          <a id="title-collapse" class="navbar-brand text-expanded font-weight-bold d-lg-none" href="{% url 'Inicio' %}">MariArte</a>
-          <button id="btn-collapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <svg id="btn-collapse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-            </svg>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <h1 class="site-heading text-center d-none d-lg-block">
-              <a class="site-heading-lower" href="{% url 'Inicio' %}">MariArte</a>
-            </h1>
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-center" href="{% url 'Inicio' %}">Inicio</a>
-              </li>
-              <li class="nav-item {% if request.path == '/servicios/' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-center" href="{% url 'Servicio' %}">Servicios</a>
-              </li>
-              <li class="nav-item {% if request.path == '/tienda/' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-center" href="{% url 'Tienda' %}">Tienda</a>
-              </li>
-              <li class="nav-item {% if request.path == '/contacto/' %} active {% endif %} px-lg-4">
-                <a class="nav-link text-center" href="{% url 'Contacto' %}">Contacto</a>
-              </li>
-            </ul>
+    <!--   NAVBAR   -->
+    <nav class="navbar">
+        <h1 class="title-navbar">MariArte</h1>
+        <ul class="links-navbar">
+          <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-center" href="{% url 'Inicio' %}">Inicio</a>
+          </li>
+          <li class="nav-item {% if request.path == '/servicios/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-center" href="{% url 'Servicio' %}">Servicios</a>
+          </li>
+          <li class="nav-item {% if request.path == '/tienda/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-center" href="{% url 'Tienda' %}">Tienda</a>
+          </li>
+          <li class="nav-item {% if request.path == '/contacto/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-center" href="{% url 'Contacto' %}">Contacto</a>
+          </li>
+          <li>
             <form class="text-center text-expanded">
-                {% if user.is_authenticated %}
-                <button id="btn-user" class="btn btn-sm" type="button">
-                  <span class="text-center" href="{% url 'cerrar_sesion' %}">Hola, {{ user.username }}</span>
-                </button>
-                <button class="btn btn-sm nav-item {% if request.path == '/cerrar_sesion/' %} active {% endif %}" type="button">
-                    <a class="nav-link text-center" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
-                </button>
-                {% else %}
-                <button class="btn btn-sm nav-item {% if request.path == '/autenticacion/logear' %} active {% endif %}" type="button">
-                    <a class="nav-link text-center" href="{% url 'logear' %}">Login</a>
-                </button>
-                <button class="btn btn-sm nav-item {% if request.path == '/autenticacion/' %} active {% endif %}" type="button">
-                    <a class="nav-link text-center" href="{% url 'Autenticacion' %}">Regí­strate</a>
-                </button>
-                {% endif %}
+              {% if user.is_authenticated %}
+              <button id="btn-user" class="btn btn-sm" type="button">
+                <span class="text-center" href="{% url 'cerrar_sesion' %}">Hola, {{ user.username }}</span>
+              </button>
+          </li>
+          <li>
+              <button class="btn btn-sm nav-item {% if request.path == '/cerrar_sesion/' %} active {% endif %}" type="button">
+                  <a class="nav-link text-center" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+              </button>
+          </li>
+              {% else %}
+            <li>
+              <button class="btn btn-sm nav-item {% if request.path == '/autenticacion/logear' %} active {% endif %}" type="button">
+                  <a class="nav-link text-center" href="{% url 'logear' %}">Login</a>
+              </button>
+            
+              <button class="btn btn-sm nav-item {% if request.path == '/autenticacion/' %} active {% endif %}" type="button">
+                  <a class="nav-link text-center" href="{% url 'Autenticacion' %}">Regí­strate</a>
+              </button>
+              {% endif %}
             </form>
+          </li>
+          <li>
             <a class="nav-link text-center" href="{% url 'TiendaCarro' %}">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart4 carro" viewBox="0 0 16 16">
                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
               </svg>
             </a>
-          </div>
-        </div>
-    </nav>
+          </li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+          <ion-icon class="barras" name="menu-outline"></ion-icon>
+        </button>
+      </nav>
 
   	{% block content %}
 
@@ -111,11 +112,13 @@
     </div>
 	  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  	<script src="{% static 'mariarteApp/vendor/jquery/jquery.min.js' %}"></script>
-	  <script src="{% static 'mariarteapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'mariarteApp/vendor/bootstrap/js/menu.js' %}"></script>
+  	<script src="{% static 'mariarteApp/vendor/jquery/jquery.min.js' %}"></script>
+	  <script src="{% static 'mariarteApp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
 </body>
 </html>

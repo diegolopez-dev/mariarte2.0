@@ -48,57 +48,41 @@ body {
 }
 
 /*  ---'BASE'---  */
-
-.site-heading-lower {
-  font-size: 2rem;
-  font-weight: var(--bold-font);
-  color: var(--font-color);
-}
-
-.site-heading-lower:hover {
-  text-decoration: none;
-  transform: scale(1.2);
-}
-
-/*  Navbar  */
-#mainNav {
+.navbar {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1;
   background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 7rem;
+  background-color: var(--bg-color);
 }
 
-#title-collapse {
-  color: var(--font-color);
-}
-
-#btn-collapse path {
-  color: var(--font-color);
-}
-
-#btn-collapse:hover {
-  text-decoration: none;
-  transform: scale(1.2);
-}
-
-#btn-collapse:focus {
-  outline: none;
-}
-
-.navbar-nav .nav-item .nav-link {
-  color: var(--font-color);
+.title-navbar {
+  font-size: 2rem;
   font-weight: var(--bold-font);
+  color: var(--font-color);
+  margin-left: 4rem;
 }
 
-.navbar-nav .nav-item.active .nav-link {
+.links-navbar .nav-item.active .nav-link {
   color: var(--font-color-active);
   text-decoration: underline;
 }
 
-.navbar-collapse .navbar-nav .nav-item a:hover {
+.links-navbar {
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+  margin-right: 3rem;
+} 
+
+.nav-link {
   color: var(--font-color);
-  transform: scale(1.1);
+  font-weight: var(--bold-font);
 }
 
 .btn {
@@ -106,7 +90,7 @@ body {
   background: var(--bg-color);
   font-weight: var(--bold-font);
   padding: 0;
-  margin: 0 .5rem;
+  margin: 0;
   border: 1px solid var(--font-color);
 }
 
@@ -123,6 +107,15 @@ body {
 
 .carro:hover {
   transform: scale(1.1);
+} 
+
+.burger-menu {
+  color: var(--secondary-font-color);
+  font-size: 1.5rem;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
 }
 
 @media (min-width: 992px) {
@@ -346,6 +339,48 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+
+  /*   NAVBAR RESPONSIVE   */
+  .navbar {
+    padding: .5rem .5rem;
+  }
+
+  .title-navbar {
+    margin-left: .5rem;
+  }
+
+  .links-navbar {
+    position: fixed;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    top: 3rem;
+    width: 100%;
+    text-align: center;
+    transform: translateX(180%);
+    transition: transform 0.8s ease-in;
+  }
+
+  .navbar ul li {
+    margin: .5rem;
+  }
+
+  .burger-menu {
+    display: block;
+    margin-right: .5rem;
+  }
+
+  .burger-menu:hover {
+    text-decoration: none;
+  }
+
+  .burger-menu:focus {
+    outline: none;
+  }
+
+  .links-navbar.show {
+    transform: translateX(0);
+  }
+
   .card img {
     height: 360px;
   }
