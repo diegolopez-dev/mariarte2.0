@@ -57,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .5rem 7rem;
+  padding: .5rem;
   background-color: var(--bg-color);
 }
 
