@@ -76,7 +76,7 @@ body {
 .links-navbar {
   display: flex;
   gap: 1rem;
-  margin-top: .5rem;
+  margin-top: 1rem;
   margin-right: 3rem;
 } 
 
@@ -144,7 +144,7 @@ body {
 
 .slider {
   margin-top: .5rem;
-  margin-bottom: -4rem;
+  margin-bottom: -2rem;
 }
 
 /*  Slider  */
@@ -360,10 +360,6 @@ body {
     transition: transform 0.8s ease-in;
   }
 
-  .navbar ul li {
-    margin: .5rem;
-  }
-
   .burger-menu {
     display: block;
     margin-right: .5rem;
@@ -546,6 +542,7 @@ table,
   padding: 0.2rem .5rem;
   color: var(--bg-color);
   background-color: var(--font-color);
+  margin: .1rem
 }
 
 .añadir:hover {

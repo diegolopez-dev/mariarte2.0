@@ -36,10 +36,9 @@
             <a class="nav-link text-center" href="{% url 'Contacto' %}">Contacto</a>
           </li>
           <li>
-            <form class="text-center text-expanded">
               {% if user.is_authenticated %}
               <button id="btn-user" class="btn btn-sm" type="button">
-                <span class="text-center" href="{% url 'cerrar_sesion' %}">Hola, {{ user.username }}</span>
+                <a class="nav-link text-center" href="{% url 'cerrar_sesion' %}">Hola, {{ user.username }}</a>
               </button>
           </li>
           <li>
@@ -57,7 +56,6 @@
                   <a class="nav-link text-center" href="{% url 'Autenticacion' %}">Regí­strate</a>
               </button>
               {% endif %}
-            </form>
           </li>
           <li>
             <a class="nav-link text-center" href="{% url 'TiendaCarro' %}">
