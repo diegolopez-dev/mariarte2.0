@@ -38,7 +38,7 @@
           <li>
               {% if user.is_authenticated %}
               <button id="btn-user" class="btn btn-sm" type="button">
-                <a class="nav-link text-center" href="{% url 'cerrar_sesion' %}">Hola, {{ user.username }}</a>
+                <span class="nav-link text-center" href="{% url 'cerrar_sesion' %}">Hola, {{ user.username }}</span>
               </button>
           </li>
           <li>
