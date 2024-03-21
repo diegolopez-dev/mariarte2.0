@@ -99,6 +99,11 @@ body {
   background: var(--font-color);
 }
 
+#btn:hover {
+  color: var(--bg-color);
+  background: var(--font-color);
+}
+
 #btn-user {
   color: var(--font-color) !important;
   font-weight: var(--bold-font) !important;

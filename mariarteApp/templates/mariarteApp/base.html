@@ -42,17 +42,17 @@
               </button>
           </li>
           <li>
-              <button class="btn btn-sm nav-item {% if request.path == '/cerrar_sesion/' %} active {% endif %}" type="button">
+              <button id="btn" class="btn btn-sm nav-item {% if request.path == '/cerrar_sesion/' %} active {% endif %}" type="button">
                   <a class="nav-link text-center" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
               </button>
           </li>
               {% else %}
             <li>
-              <button class="btn btn-sm nav-item {% if request.path == '/autenticacion/logear' %} active {% endif %}" type="button">
+              <button id="btn" class="btn btn-sm nav-item {% if request.path == '/autenticacion/logear' %} active {% endif %}" type="button">
                   <a class="nav-link text-center" href="{% url 'logear' %}">Login</a>
               </button>
             
-              <button class="btn btn-sm nav-item {% if request.path == '/autenticacion/' %} active {% endif %}" type="button">
+              <button id="btn" class="btn btn-sm nav-item {% if request.path == '/autenticacion/' %} active {% endif %}" type="button">
                   <a class="nav-link text-center" href="{% url 'Autenticacion' %}">Regí­strate</a>
               </button>
               {% endif %}
