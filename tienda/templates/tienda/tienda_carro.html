@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 
-<section class="contact" id="contact">
+<section class="contact" id="carro">
     <h2 class="contact-title">Pedido</h2>
-    <div class="contact-container">
+    <div class="contact-container" id="carro_container">
         {% if request.user.is_authenticated %}
             {% include "carro/widget.html" %}
         {% else %}
