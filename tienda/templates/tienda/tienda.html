@@ -8,34 +8,10 @@
         {% for producto in productos %}
         <div class="col-md-4">
             <div class="card">
-                <img class="card-img-top" src="{% static './mariarteApp/img/Botella1.jpg' %}" alt="">
+                <img class="card-img-top" src="{{producto.imagen.url}}">
                 <div class="card-body">
-                    <h7>Botella 1</h7>
-                    <p>35 €</p>
-                    <button class="btn btn-sm nav-item" type="button">
-                        <a class="nav-link text-center" href="{% if request.user.is_authenticated %} {% url 'carro:agregar' producto.id %} {% else %} {% url 'TiendaCarro' %} {% endif %}">Agregar al carro</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="{% static './mariarteApp/img/Botella2.jpg' %}" alt="">
-                <div class="card-body">
-                    <h7>Botella2</h7>
-                    <p>20 €</p>
-                    <button class="btn btn-sm nav-item" type="button">
-                        <a class="nav-link text-center" href="{% if request.user.is_authenticated %} {% url 'carro:agregar' producto.id %} {% else %} {% url 'TiendaCarro' %} {% endif %}">Agregar al carro</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="{% static './mariarteApp/img/Botella3.jpg' %}" alt="">
-                <div class="card-body">
-                    <h7>Botella 3</h7>
-                    <p>25 €</p>
+                    <h7>{{producto.nombre}}</h7>
+                    <p>{{producto.precio}} €</p>
                     <button class="btn btn-sm nav-item" type="button">
                         <a class="nav-link text-center" href="{% if request.user.is_authenticated %} {% url 'carro:agregar' producto.id %} {% else %} {% url 'TiendaCarro' %} {% endif %}">Agregar al carro</a>
                     </button>
