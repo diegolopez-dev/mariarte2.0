@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g&dq*0u)$dp($azyw=ku1988nd=)22$(l^8(6+u6c!1@f0w!de'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'autenticacion',
     'crispy_forms', 
     'crispy_bootstrap5',
-    'pedidos',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ProyectoWeb.urls'
+ROOT_URLCONF = 'mariarte.urls'
 
 TEMPLATES = [
     {
