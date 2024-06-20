@@ -19,16 +19,16 @@
                 <td class="articulos">{{value.nombre}}</td>
                 <td class="articulos">{{value.cantidad}}</td>
                 <td>
-                    <a href="{% url 'carro:agregar' value.producto_id %}" class="añadir btn btn-sm"> + </a>
-                    <a href="{% url 'carro:restar' value.producto_id %}" class="añadir btn btn-sm"> - </a>
-                    <p class="precio">{{value.precio}} €</p>
+                    <a href="{% url 'carro:agregar' value.producto_id %}" class="add btn btn-sm"> + </a>
+                    <a href="{% url 'carro:restar' value.producto_id %}" class="add btn btn-sm"> - </a>
+                    <p class="price">{{value.precio}} €</p>
                 </td>
             </tr>
         {% endfor %} 
         {% else %}
             <tr>
                 <td colspan="3">
-                    <div class="sin-productos text-center">
+                    <div class="not-products text-center">
                         Sin productos
                     </div>
                 </td>
