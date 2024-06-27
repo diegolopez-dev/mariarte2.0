@@ -418,7 +418,7 @@ body {
 .contact {
   color: var(--bg-color);
   margin-top: .5rem;
-  padding: .2rem;
+  padding: 1rem;
 }
 
 .contact-title {
